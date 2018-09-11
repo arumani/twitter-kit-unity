@@ -26,7 +26,7 @@ UNITY_BIN="${UNITY_BIN:=$UNITY_DEFAULT_BIN}"
 [ -e "$UNITY_BIN" ] || die "Unable to locate Unity application. Set location using UNITY_BIN.\n"
 
 info "Exporting Twitter Kit Unity package\n"
-$UNITY_BIN -batchmode -nographics -projectPath $UNITY_PACKAGE_ROOT -logFile $UNITY_EXPORT_LOG -exportPackage $UNITY_EXPORT_PATH $UNITY_EXPORT_PACKAGE -quit \
+"$UNITY_BIN" -batchmode -nographics -projectPath $UNITY_PACKAGE_ROOT -logFile $UNITY_EXPORT_LOG -exportPackage $UNITY_EXPORT_PATH $UNITY_EXPORT_PACKAGE -quit \
  || die "Failed to export Unity package. For more info see $UNITY_EXPORT_LOG\n"
 
  success "Unity package exported to $UNITY_EXPORT_PACKAGE\n"
