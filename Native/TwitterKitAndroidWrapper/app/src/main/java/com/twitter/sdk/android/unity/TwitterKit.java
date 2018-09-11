@@ -46,10 +46,10 @@ public class TwitterKit {
      * @param consumerSecret Twitter App Consumer Secret (API Secret)
      */
     public static void init(final String consumerKey, final String consumerSecret) {
-        final TwitterConfig config = new TwitterConfig.Builder(
-                UnityPlayer.currentActivity.getApplicationContext())
-                .twitterAuthConfig(new TwitterAuthConfig(consumerKey, consumerSecret))
-                .build();
+        final TwitterAuthConfig authConfig = new TwitterAuthConfig(consumerKey, consumerSecret);
+        final TwitterConfig config = new TwitterConfig.Builder(getContext())
+                                   .twitterAuthConfig(authConfig)
+                                   .build();
         Twitter.initialize(config);
     }
 
